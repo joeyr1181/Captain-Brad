@@ -57,7 +57,7 @@ Download the latest playable Windows build here:
 
  [Download CaptainBradBuild.zip](https://github.com/your-username/CaptainBrad/releases/latest)
 
-> No install needed. Just unzip and run the `.exe`  
+> No install needed. Just unzip and run the "Prototype3" `.exe`  
 > Built in Unity using C#
 
 
