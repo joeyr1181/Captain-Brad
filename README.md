@@ -51,6 +51,16 @@ Captain Brad is a simple endless runner/flyer game made in Unity. Control Brad a
 - Occasional obstacle z-position glitches (working on locking z-axis strictly -- constraints locked, issue lies elsewhere).
 - Future plans to add more obstacle types and power-ups.
 
+## Play Captain Brad
+
+Download the latest playable Windows build here:
+
+ [Download CaptainBradBuild.zip](https://github.com/your-username/CaptainBrad/releases/latest)
+
+> No install needed. Just unzip and run the `.exe`  
+> Built in Unity using C#
+
+
 ## Credits
 
 - Game created by Joey R
