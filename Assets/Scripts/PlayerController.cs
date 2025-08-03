@@ -3,6 +3,11 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+
+    // This script controls the player character's movement and interactions
+    // It allows the player to fly upward by holding the spacebar
+    // It also handles collision with obstacles, triggering game over state
+    // Adjust the fly force and gravity modifier as needed
     private Rigidbody playerRb;
     private Animator playerAnim;
 
@@ -16,6 +21,9 @@ public class PlayerController : MonoBehaviour
 
     public bool gameOver = false;
 
+
+    // Start is called before the first frame update
+    // Initialize the Rigidbody, Animator, and AudioSource components
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -30,6 +38,8 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(FreezeAnimationAfterDelay(1.5f));
     }
 
+    // Update is called once per frame
+    // This method handles player input for flying and checks for game over state
     void Update()
     {
         if (gameOver) return;
@@ -51,6 +61,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // This method is called when the player collides with an obstacle
+    // It sets the game over state, plays the death animation, and triggers explosion effects
+    // It also plays a crash sound effect
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Obstacle"))
@@ -65,6 +78,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // This coroutine freezes the player's animation after a specified delay
     private IEnumerator FreezeAnimationAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);

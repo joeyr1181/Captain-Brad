@@ -3,21 +3,30 @@ using UnityEngine;
 
 public class CoinPatternSpawner : MonoBehaviour
 {
+
+    // This script spawns coins in various patterns
+    // Adjust the spawn settings as needed
+    // The player Transform is used to determine where to spawn coins relative to the player
     public GameObject coinPrefab;
     public Transform player;
 
+// Settings for coin spawning
     [Header("Coin Spawn Settings")]
     public float spawnInterval = 2f;
     public float coinDestroyDistance = 10f;
     public float minY = -2f;
     public float maxY = 3f;
 
+    // Settings for coin movement
+    // Adjust the speed at which coins move left
     [Header("Coin Movement")]
     public float coinMoveSpeed = 5f;
 
     private float timer = 0f;
     private List<GameObject> activeCoins = new List<GameObject>();
 
+    // Update is called once per frame
+    // This method handles the spawning of coins and their movement
     void Update()
     {
         timer += Time.deltaTime;
@@ -55,6 +64,9 @@ public class CoinPatternSpawner : MonoBehaviour
         }
     }
 
+    // Methods to spawn coins in different patterns
+    // These methods create coins in a straight line or in a cluster
+    // Adjust the number of coins and their spacing as needed
     void SpawnStraightLine()
     {
         int count = Random.Range(3, 7);
@@ -70,6 +82,9 @@ public class CoinPatternSpawner : MonoBehaviour
         }
     }
 
+    // Spawns a cluster of coins in a grid pattern
+    // The number of rows and columns is randomized
+    // The spacing between coins is also randomized
     void SpawnCluster()
     {
         int rows = Random.Range(2, 4);

@@ -3,6 +3,8 @@ using UnityEngine;
 public class RepeatBackground : MonoBehaviour
 {
 
+    // This script repeats the background object when it moves past a certain point
+    // It is useful for creating an endless scrolling effect
     private Vector3 startPos;
     private float repeatWidth;
 

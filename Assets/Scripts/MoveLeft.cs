@@ -2,11 +2,18 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
+
+    // This script moves the object to the left at a constant speed
+    // It also destroys the object if it goes beyond a certain left boundary
+    // Adjust the speed and left boundary as needed
+    // The object should have a Rigidbody component if physics interactions are needed
     private float speed = 30f;
     private PlayerController playerControllerScript;
     private float leftBound = -15f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Initialize the PlayerController script to check for game state
+    // This is useful to prevent movement when the game is over
     void Start()
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
